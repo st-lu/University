@@ -1,0 +1,120 @@
+.data
+	v:.word 1, -2, 15, 7, 20
+	n:.word 5
+	sp:.asciiz " "
+
+.text
+  j main
+  modifica:
+	subu $sp, $sp, 4
+	sw $fp, 0($sp)
+	addi $fp, $sp, 4
+	subu $sp, $sp, 4
+	sw $ra, 0($sp)
+	subu $sp, $sp, 4
+	sw $s0, 0($sp) 
+	subu $sp, $sp, 4
+	sw $s1, 0($sp)
+	
+	lw $s0, 0($fp) #adresa lui v
+	lw $s1, 4($fp) #n
+	
+	
+	beqz $s1, exit
+	lw $t0, 0($s0)
+	addi $t0, $t0, -1
+	subu $sp, $sp, 4
+	sw $t0, 0($sp)
+	
+	li $v0, 0
+	jal suma_patrate
+	
+	sw $v0, 0($s0)
+	
+	addu $sp, $sp, 4
+	
+	addi $s0, $s0, 4
+	addi $s1, $s1, -1
+			
+	subu $sp, $sp, 4
+	sw $s1, 0($sp)
+	subu $sp, $sp, 4
+	sw $s0, 0($sp)
+		
+	jal modifica
+	
+	addu $sp, $sp, 8
+		
+	exit_modifica:
+		lw $s1, -16($fp)
+		lw $s0, -12($fp)
+		lw $ra, -8($fp)
+		lw $fp, -4($fp)
+		addu $sp, $sp, 16
+		jr $ra
+
+  suma_patrate:
+  	subu $sp, $sp, 4
+	sw $fp, 0($sp)
+	addi $fp, $sp, 4
+	subu $sp, $sp, 4
+	sw $ra, 0($sp)
+	subu $sp, $sp, 4
+	sw $s2, 0($sp)
+	
+	lw $s2, 0($fp)
+	ble $s2, 0, exit
+	move $t1, $s2
+	mul $t1, $t1, $t1
+	add $v0, $v0, $t1
+	
+	addi $s2, $s2, -1
+	subu $sp, $sp, 4
+	sw $s2, 0($sp)
+	
+	jal suma_patrate
+	
+	addu $sp, $sp, 4
+	
+	exit:
+		lw $s2, -12($fp)
+		lw $ra, -8($fp)
+		lw $fp, -4($fp)
+		addu $sp, $sp, 12
+		jr $ra
+	
+  	
+
+main:
+	lw $t0, n
+	subu $sp, $sp, 4
+	sw $t0, 0($sp)
+	
+	la $t0, v
+	subu $sp, $sp, 4
+	sw $t0, 0($sp)
+	
+	jal modifica
+	
+	addu $sp, $sp, 8
+	
+	lw $t2, n
+	li $t0, 0
+	li $t1, 0
+	loop:
+		bge $t0, $t2, exit_main
+		lw $a0, v($t1)
+		li $v0, 1
+		syscall
+		
+		la $a0, sp
+		li $v0, 4
+		syscall
+		
+		addi $t0, $t0, 1
+		addi $t1, $t1, 4
+		j loop
+	
+	exit_main:
+		li $v0, 10
+		syscall
