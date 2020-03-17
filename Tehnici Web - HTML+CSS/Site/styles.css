@@ -1,0 +1,125 @@
+h1, h2, h3, nav, aside, p, footer{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color:#f0f0f0;
+}
+
+
+body{
+    background-color: black;
+}
+
+
+h1{
+    font-size: 30px;
+    position: fixed;
+    left: 100px;
+    top: 85px;
+}
+
+h2{
+    font-size: 22px;
+}
+
+nav{
+    position: fixed;
+    top: 350px;
+    right: 400px;
+}
+
+figure.pozaa1{
+    position: fixed;
+    z-index: -1;
+}
+
+img.poza1{
+    width:560px;
+}
+
+figure.pozaa2{
+    position: fixed;
+    right: 10px;
+    z-index: -1;
+}
+
+img.poza2{
+    width:560px;
+    height: 600px;
+}
+
+aside.caption{
+    position: relative;
+    left: 160px;
+}
+
+footer{
+    position: absolute;
+    bottom:-100px;
+    left:500px;
+}
+
+a.top{
+    position:relative;
+    left:100px;
+}
+
+a{
+    color:#f0f0f0;
+    text-decoration:none;
+}
+
+a:link{
+    color:#f0f0f0;
+}
+
+a:hover{
+    color: black;
+}
+
+ul{
+    margin:0;
+    padding:0;
+    width:150px;
+}
+
+ul li{
+    display:block;
+    position:relative;
+}
+
+ul li a{
+    display:block;
+}
+
+ul ul {
+    position:absolute;
+    top: 0;
+    display:none;
+}
+
+ul li:hover ul{
+    display:block;
+    left:150px;
+}
+
+a.nd, a.rd{
+    transition: background 1s linear, color 1s linear;
+}
+
+a.nd:hover, a.rd:hover{
+    background: black;
+    color: red;
+}
+
+a.st{
+    width: 60px;
+    transition: background 1s linear, color 1s linear;
+}
+
+a.st:hover{
+    background: black;
+    color: red;
+}
+
+a.rd{
+    width: 100px;
+}
