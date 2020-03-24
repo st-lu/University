@@ -11,6 +11,8 @@ int main(){
     fin>>graf;
     Graf gcopy1(graf);
     gcopy = graf;
+    graf.add(1, 2);
+    graf.add(1, 1);
     for(int i = 1; i<= graf.get_noduri(); i++){
         for(int j = 1; j <= graf[i][0]; j++){
             assert(graf[i][j] == gcopy[i][j] && graf[i][j] == gcopy1[i][j]);

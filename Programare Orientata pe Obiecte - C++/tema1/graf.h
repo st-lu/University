@@ -28,8 +28,21 @@ class Graf{
         delete[] aux2;
     }
 
+    //prin metoda check verificam daca nodul y se afla deja in lista de adiacenta a nodului x si in caz afirmativ returnam true
+    bool check(int x, int y){
+        if(x > nr_noduri)
+            return false;
+        int *aux = adiacenta[x].getlist(); //parcurgem lista lui x si verificam daca se afla y in ea sau nu
+        for (int i = 0; i < adiacenta[x].length(); ++i) {
+            if(aux[i] == y)
+                return true;
+        }
+        delete[] aux;
+        return false;
+    }
+
 public:
-    //constructori & destructori
+    //constructori & destructor
     Graf();
     Graf(int, int*);
     Graf(Graf&);

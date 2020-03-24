@@ -11,6 +11,10 @@ int Graf::get_muchii() const{
 }
 
 void Graf::add(int x, int y){
+
+    if(x == y || check(x, y)) //verificam daca adaugam muchie de la un nod la el insusi sau, prin functia check, daca adaugam o muchie de doua ori
+        return;
+
     if(nr_noduri < max(x,y)){ //daca nr de noduri este mai mic decat x sau y, atunci trebuie sa extindem lista de adiacenta pana la valoarea mai mare
         extend(nr_noduri, max(x,y));
         nr_noduri = max(x,y);

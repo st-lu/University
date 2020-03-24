@@ -8,15 +8,15 @@ class Lista {
     Nod *end;
     unsigned int size;
 public:
+    //constructori & destructor
     Lista();
-    void inserare(int);
     Lista(Lista &l);
-
-    int get(int i);
-    int* getlist();
-    unsigned int length();
-
     ~Lista();
+
+    //metode
+    void inserare(int); //metoda prin care inseram un nod la lista
+    int* getlist(); //metoda prin care returnam valorile din lista sub forma de array
+    unsigned int length(); //metoda prin care returnam size-ul listei
 };
 
 inline Lista::Lista() {
@@ -27,8 +27,9 @@ inline Lista::Lista() {
 inline Lista::Lista(Lista &l){
     size = 0;
     start = end = nullptr;
+    int *aux = l.getlist();
     for (int i = 0; i < l.length() - 1; i++) {
-        inserare(l.get(i));
+        inserare(aux[i]);
     }
 }
 
