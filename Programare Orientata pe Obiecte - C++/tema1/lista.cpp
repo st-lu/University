@@ -13,7 +13,7 @@ void Lista::inserare(int x) {
 
 int Lista::get(int i){
     if (i > size)
-        return INT_MAX;
+        return INT_MAX; ///exceptie
     Nod *q = start;
     int j = 0;
     while (j < i) {

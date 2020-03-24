@@ -1,5 +1,5 @@
-#ifndef TEMA1_GRAFFFF_H
-#define TEMA1_GRAFFFF_H
+#ifndef TEMA1_GRAF_H
+#define TEMA1_GRAF_H
 
 #include <iostream>
 #include "nod.h"
@@ -10,7 +10,20 @@ class Graf{
     int nr_muchii;
     int nr_noduri;
     Lista *adiacenta;
-
+    void extend(int size){
+        auto *aux = new Lista[size+1];
+        for(int i = 0; i < size-1; i++){
+            unsigned int dim = adiacenta[i+1].length();
+            for (int j = 0; j < adiacenta[i+1].length(); ++j) {
+                int nod_adiacent = adiacenta[i+1].get(j);
+                aux[i+1].inserare(nod_adiacent);
+            }
+        }
+        auto *aux2 = new Lista[size+1];
+        aux2 = adiacenta;
+        adiacenta = aux;
+        delete[] aux2;
+    }
 public:
     //constructori & destructori
     Graf();
@@ -34,7 +47,7 @@ public:
     Graf& operator=(const Graf& g) {
         this->nr_noduri = g.nr_noduri;
         this->nr_muchii = g.nr_muchii;
-        this->adiacenta = new Lista[1000];
+        this->adiacenta = new Lista[nr_noduri+1];
         for(int i = 0; i < g.nr_noduri; i++){
             for (int j = 0; j < g.adiacenta[i+1].length(); ++j) {
                 int nod_adiacent = g.adiacenta[i+1].get(j);
@@ -45,9 +58,10 @@ public:
     }
 
     int* operator[](const int nod) const{
-        static int sol[1000];
+        int *sol = new int[adiacenta[nod].length()+1];
+        sol[0] = adiacenta[nod].length();
         for (int i = 0; i < adiacenta[nod].length(); ++i) {
-            sol[i] = adiacenta[nod].get(i);
+            sol[i+1] = adiacenta[nod].get(i);
         }
         return sol;
     }
@@ -72,13 +86,13 @@ public:
 
 inline Graf::Graf(){
     nr_noduri = nr_muchii = 0;
-    adiacenta = new Lista[1000];
+    adiacenta = new Lista[nr_noduri+1];
 }
 
 inline Graf::Graf(Graf &g){
     this->nr_noduri = g.nr_noduri;
     this->nr_muchii = g.nr_muchii;
-    adiacenta = new Lista[1000];
+    adiacenta = new Lista[nr_noduri+1];
     for(int i = 0; i < g.nr_noduri; i++){
         this->adiacenta[i+1] = g.adiacenta[i+1];
     }
@@ -87,7 +101,7 @@ inline Graf::Graf(Graf &g){
 inline Graf::Graf(int n, int v[]){
     nr_muchii = n-1;
     nr_noduri = n;
-    adiacenta = new Lista[1000];
+    adiacenta = new Lista[nr_noduri+1];
     // constructorul cu parametri primeste un vector de tati si ii creeaza graful corespunzator
     for(int i = 0; i < n; i++){
         if(v[i] != 0)
@@ -101,4 +115,4 @@ inline Graf::~Graf(){
     nr_muchii = 0;
 }
 
-#endif //TEMA1_GRAFFFF_H
+#endif //TEMA1_GRAF_H

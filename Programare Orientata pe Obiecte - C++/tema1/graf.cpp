@@ -11,30 +11,32 @@ int Graf::get_muchii(){
 }
 
 void Graf::add(int x, int y){
-    if(adiacenta[x].length() == 0){
+    if(nr_noduri < x){
         nr_noduri++;
-
-    }
-    if(adiacenta[y].length() == 0){
-        nr_noduri++;
-
+        extend(nr_noduri);
     }
     adiacenta[x].inserare(y);
+    if(nr_noduri < y){
+        nr_noduri++;
+        extend(nr_noduri);
+    }
     adiacenta[y].inserare(x);
     nr_muchii++;
 }
 
 int* Graf::bfs(int x){
-    bool v[1000]; int c[1000]; static int sol[1000];
-    for(int i = 0; i < 1000; i++){
-        v[i] = false; c[0] = 0; sol[0] = 0;
+    bool *v = new bool[nr_noduri+1];
+    int *c = new int[nr_noduri];
+    int *sol = new int[nr_noduri+1];
+    for(int i = 0; i < nr_noduri; i++){
+        v[i+1] = false; c[i] = 0; sol[i+1] = 0;
     }
     int p, u;
     p = u = 0;
-    int counter = 0;
+    int counter = 1;
     c[0] = x;
     v[x] = true;
-    sol[0] = x;
+    sol[1] = x;
     while(p <= u){
         int nod_curent = c[p];
         for(int i = 0; i < adiacenta[nod_curent].length(); i++){
@@ -47,23 +49,24 @@ int* Graf::bfs(int x){
         }
         p++;
     }
+    delete[] v;
+    delete[] c;
+    sol[0] = counter;
     return sol;
 }
 
 int* Graf::dfs(int x) {
-    bool v[1000];
-    int s[1000];
-    static int sol[1000];
-    for (int i = 0; i < 1000; i++) {
-        v[i] = false;
-        s[0] = 0;
-        sol[0] = 0;
+    bool *v = new bool[nr_noduri+1];
+    int *s = new int[nr_noduri];
+    int *sol = new int[nr_noduri];
+    for(int i = 0; i < nr_noduri; i++){
+        v[i+1] = false; s[i] = 0; sol[i+1] = 0;
     }
     int tos = 0;
-    int counter = 0;
+    int counter = 1;
     s[0] = x;
     v[x] = true;
-    sol[0] = x;
+    sol[1] = x;
     while (tos != -1) {
         int nod_curent = s[tos];
         --tos;
@@ -76,14 +79,17 @@ int* Graf::dfs(int x) {
             }
         }
     }
-
+    delete[] v;
+    delete[] s;
+    sol[0] = counter;
     return sol;
 }
 
 int Graf::distanta(int x, int y){
-    int v[1000]; int c[1000], sol[1000];
-    for(int i = 0; i < 1000; i++){
-        v[i] = 0; c[0] = 0; sol[0] = 0;
+    int *v = new int[nr_noduri+1];
+    int *c = new int[nr_noduri];
+    for(int i = 0; i < nr_noduri; i++){
+        v[i+1] = 0; c[i] = 0;
     }
     int p, u;
     p = u = 0;
@@ -97,13 +103,15 @@ int Graf::distanta(int x, int y){
             if(!v[nod_vecin]){
                 v[nod_vecin] = v[nod_curent] + 1;
                 c[++u] = nod_vecin;
-                sol[++counter] = nod_vecin;
             }
         }
         p++;
     }
-    if(v[y] != 0)
-        return v[y];
+    int sol = v[y];
+    delete[] v;
+    delete[] c;
+    if(sol != 0)
+        return sol-1;
     else
         return -1; ///exception?
 }
@@ -115,8 +123,8 @@ bool Graf::is_tree(){
 }
 
 int Graf::componente_conexe(){
-    bool viz[1000];
-    for(int i = 0; i < 1000; i++){
+    bool viz[nr_noduri+1];
+    for(int i = 0; i < nr_noduri+1; i++){
         viz[i] = false;
     }
     int nr_componente = 0;
@@ -124,7 +132,7 @@ int Graf::componente_conexe(){
         if(!viz[i+1]) {
             nr_componente++;
             int *v = bfs(i + 1);
-            for(int j = 0; v[j] != 0; j++){
+            for(int j = 1; j <= v[0]; j++){
                 viz[v[j]] = true;
             }
         }
@@ -135,10 +143,11 @@ int Graf::componente_conexe(){
 
 /// Operatori friend
 istream& operator>>(istream& in, Graf& g){
-    int xx, yy;
-    in >> xx;
-    in >> yy;
-    for (int i = 0; i < yy; ++i) {
+    int noduri, muchii;
+    in >> noduri;
+    in >> muchii;
+    g.adiacenta = new Lista[noduri+1];
+    for (int i = 0; i < muchii; ++i) {
         int x, y;
         in >> x >> y;
         g.add(x, y);
