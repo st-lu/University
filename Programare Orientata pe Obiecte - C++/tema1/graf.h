@@ -9,21 +9,25 @@ using namespace std;
 class Graf{
     int nr_muchii;
     int nr_noduri;
-    Lista *adiacenta;
-    void extend(int size){
-        auto *aux = new Lista[size+1];
-        for(int i = 0; i < size-1; i++){
-            unsigned int dim = adiacenta[i+1].length();
+    Lista *adiacenta; // lista cu listele de adiacenta
+
+    // in metoda extend, marim capacitatea grafului i.e. alocam mai multa memorie in adiacenta atunci cand adaugam un nou nod la graf
+    void extend(int oldsize, int newsize){
+        auto *aux = new Lista[newsize+1]; // in aux avem lista de adiacenta extinsa in care o sa copiem adiacenta curenta
+        for(int i = 0; i < oldsize; i++){
+            int *aux1 = adiacenta[i+1].getlist(); //getlist() intoarce un vector cu nodurile din lista de vecini a lui i+1
             for (int j = 0; j < adiacenta[i+1].length(); ++j) {
-                int nod_adiacent = adiacenta[i+1].get(j);
+                int nod_adiacent = aux1[j];
                 aux[i+1].inserare(nod_adiacent);
             }
+            delete[] aux1;
         }
-        auto *aux2 = new Lista[size+1];
-        aux2 = adiacenta;
+        Lista *aux2;
+        aux2 = adiacenta; //stergem adiacenta veche si o inlocuim cu cea noua
         adiacenta = aux;
         delete[] aux2;
     }
+
 public:
     //constructori & destructori
     Graf();
@@ -33,79 +37,52 @@ public:
 
 
     //metode
-    int get_noduri();
-    int get_muchii();
-    void add(int, int); //mai modifica
-    int* bfs(int);
-    int* dfs(int);
-    int distanta(int, int);
-    bool is_tree();
-    int componente_conexe();
+    int get_noduri() const; //metoda prin care obtine nr de noduri
+    int get_muchii() const; //metoda prin care obtinem nr de muchii
+    void add(int, int); //metoda prin care adaugam o muchie la graf
+    int* bfs(int); //metoda prin care parcurgem in latime pronind de la un nod dat
+    int* dfs(int); //metoda prin care parcurgem in lungime pornind de la un nod dat
+    int distanta(int, int); //metoda prin care aflam distanta dintre doua noduri
+    bool is_tree(); //metoda prin care verificam daca un graf este arbor
+    int componente_conexe(); //metoda prin care aflam cate componente conexe are graful
 
 
     //operatori
-    Graf& operator=(const Graf& g) {
-        this->nr_noduri = g.nr_noduri;
-        this->nr_muchii = g.nr_muchii;
-        this->adiacenta = new Lista[nr_noduri+1];
-        for(int i = 0; i < g.nr_noduri; i++){
-            for (int j = 0; j < g.adiacenta[i+1].length(); ++j) {
-                int nod_adiacent = g.adiacenta[i+1].get(j);
-                this->adiacenta[i+1].inserare(nod_adiacent);
-            }
-        }
-        return *this;
-    }
-
-    int* operator[](const int nod) const{
-        int *sol = new int[adiacenta[nod].length()+1];
-        sol[0] = adiacenta[nod].length();
-        for (int i = 0; i < adiacenta[nod].length(); ++i) {
-            sol[i+1] = adiacenta[nod].get(i);
-        }
-        return sol;
-    }
-
-    bool operator>(const Graf& g) const {
-        if(this->nr_noduri > g.nr_noduri || (this->nr_muchii > g.nr_muchii && this->nr_noduri == g.nr_noduri))
-            return true;
-        return false;
-    }
-
-    bool operator<(const Graf& g) const{
-        if(this->nr_noduri < g.nr_noduri || (this->nr_muchii < g.nr_muchii && this->nr_noduri == g.nr_noduri))
-            return true;
-        return false;
-    }
-
-
-    //friend
+    Graf& operator=(const Graf& g);
+    int* operator[](const int nod) const;
+    bool operator>(const Graf& g) const;
+    bool operator<(const Graf& g) const;
     friend istream&operator>>(istream&, Graf&);
     friend ostream&operator<<(ostream&, Graf&);
 };
 
 inline Graf::Graf(){
     nr_noduri = nr_muchii = 0;
-    adiacenta = new Lista[nr_noduri+1];
+    adiacenta = nullptr;
 }
 
 inline Graf::Graf(Graf &g){
     this->nr_noduri = g.nr_noduri;
     this->nr_muchii = g.nr_muchii;
-    adiacenta = new Lista[nr_noduri+1];
+    this->adiacenta = new Lista[nr_noduri+1];
     for(int i = 0; i < g.nr_noduri; i++){
-        this->adiacenta[i+1] = g.adiacenta[i+1];
+        int *aux = g.adiacenta[i+1].getlist();
+        for (int j = 0; j < g.adiacenta[i+1].length(); ++j) { //copiem adiacenta lui g in cea a grafului in care se face atribuirea
+            int nod_adiacent = aux[j];
+            this->adiacenta[i+1].inserare(nod_adiacent);
+        }
+        delete[] aux;
     }
 }
 
 inline Graf::Graf(int n, int v[]){
-    nr_muchii = n-1;
-    nr_noduri = n;
-    adiacenta = new Lista[nr_noduri+1];
-    // constructorul cu parametri primeste un vector de tati si ii creeaza graful corespunzator
+    nr_muchii = 0;
+    nr_noduri = 0;
+    adiacenta = new Lista[n+1];
+    // constructorul cu parametri primeste un vector de tati si ii creeaza graful/arborele corespunzator
     for(int i = 0; i < n; i++){
-        if(v[i] != 0)
-            add(i,v[i]);
+        if(v[i+1] != 0)
+            add(i+1, v[i+1]);
     }
 }
 

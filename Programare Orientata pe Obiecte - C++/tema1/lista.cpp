@@ -11,16 +11,16 @@ void Lista::inserare(int x) {
     }
 }
 
-int Lista::get(int i){
-    if (i > size)
-        return INT_MAX; ///exceptie
+int* Lista::getlist(){
     Nod *q = start;
+    int *sol = new int[size];
     int j = 0;
-    while (j < i) {
+    while (j < size) {
+        sol[j] = q->getInfo();
         q = q->getNext();
         j++;
     }
-    return q->getInfo();
+    return sol;
 }
 
 unsigned int Lista::length() {

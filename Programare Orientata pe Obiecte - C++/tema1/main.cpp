@@ -4,17 +4,16 @@
 #include "graf.h"
 using namespace std;
 
-/// To Do: optimizeaza parcurgerea listei de adiacenta - supraincarca [] la lista sa iti returneze array
-///        uita-te prin laboratoare sa vezi ce notiuni de poo poti sa mai adaugi codului
 int main(){
     ifstream fin("graf.in");
     ofstream fout("graf.out");
     Graf graf, gcopy;
     fin>>graf;
+    Graf gcopy1(graf);
     gcopy = graf;
     for(int i = 1; i<= graf.get_noduri(); i++){
         for(int j = 1; j <= graf[i][0]; j++){
-            assert(graf[i][j] == gcopy[i][j]);
+            assert(graf[i][j] == gcopy[i][j] && graf[i][j] == gcopy1[i][j]);
         }
     }
     int componente = graf.componente_conexe();
@@ -41,6 +40,9 @@ int main(){
     gcopy.add(1,3);
     bool tree = gcopy.is_tree();
     assert(tree);
+    int vec[] = {0, 0, 1, 1, 3, 3, 5, 4};
+    Graf g(7, vec);
+    assert(g.is_tree());
     fout<<graf;
     return 0;
 }

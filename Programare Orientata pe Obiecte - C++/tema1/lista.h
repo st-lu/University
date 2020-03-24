@@ -13,6 +13,7 @@ public:
     Lista(Lista &l);
 
     int get(int i);
+    int* getlist();
     unsigned int length();
 
     ~Lista();
