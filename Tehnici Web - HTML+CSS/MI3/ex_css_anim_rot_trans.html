@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div #soare {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation: soare 10s infinite;
+            border-radius: 100%;
+        }
+
+        #soare,
+        .raza {
+            animation-timing-function: linear;
+        }
+
+        .raza {
+            width: 200px;
+            height: 10px;
+            background-color: yellow;
+            animation: raze 10s infinite;
+        }
+
+        #first {
+            position: absolute;
+            top: 49px;
+            left: -52.5px;
+        }
+
+        #fereastra {
+            width: 500px;
+            height: 250px;
+            border: 7px solid brown;
+            border-style: inset;
+            background-color: black;
+            animation: fereastra 5s infinite;
+            animation-direction: alternate;
+            overflow-x: hidden;
+        }
+
+        @keyframes fereastra {
+            25% {
+                background-color: navy;
+            }
+
+            100% {
+                background-color: lightblue;
+            }
+        }
+
+        @keyframes soare {
+            0% {
+                background-color: red;
+                left: -170px;
+                top: 300px;
+                transform: rotate(0deg);
+
+            }
+
+            50% {
+                background-color: yellow;
+                left: 200px;
+                top: -70px;
+                transform: rotate(180deg);
+
+            }
+
+            100% {
+                background-color: red;
+                left: 500px;
+                top: 300px;
+                transform: rotate(360deg);
+
+            }
+        }
+
+        @keyframes raze {
+            0% {
+                background-color: red;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            100% {
+                background-color: red;
+            }
+        }
+
+        .raza:nth-child(1) {
+            transform: rotate(30deg);
+        }
+
+        .raza:nth-child(2) {
+            transform: rotate(60deg);
+        }
+
+        .raza:nth-child(3) {
+            transform: rotate(90deg);
+        }
+
+        .raza:nth-child(4) {
+            transform: rotate(120deg);
+        }
+
+        .raza:nth-child(5) {
+            transform: rotate(150deg);
+        }
+
+        .raza:nth-child(6) {
+            transform: rotate(180deg);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="fereastra">
+        <div id="soare">
+            <div class="raza" id="first">
+                <div class="raza">
+                    <div class="raza">
+                        <div class="raza">
+                            <div class="raza">
+                                <div class="raza">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

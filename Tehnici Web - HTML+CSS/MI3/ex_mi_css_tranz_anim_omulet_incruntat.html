@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #textul {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: red;
+            display: none;
+        }
+
+        .fata {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            background-color: yellow;
+        }
+
+        .sprancene {
+            width: 90px;
+            height: 15px;
+            background-color: darksalmon;
+            box-sizing: border-box;
+        }
+
+        div .sprancene:nth-child(1) {
+            transform: rotate(-45deg);
+        }
+
+        div .sprancene:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .ochi {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 100%;
+            box-sizing: border-box;
+        }
+
+        .ochi:first-child, .sprancene:first-child {
+            margin-right: 25px;
+        }
+
+        .ochi:nth-child(2), .sprancene:nth-child(2) {
+            margin-left: 25px;
+        }
+
+        .poz {
+            display: flex;
+        }
+
+        .poz:nth-of-type(1){
+            position: absolute;
+            top: 70px;
+            left: 30px;
+        }
+
+        .poz:nth-of-type(2){
+            position: absolute;
+            top: 125px;
+            left: 100px;
+        }
+
+        .poz:nth-of-type(3){
+            position: absolute;
+            top: 300px;
+            left: 90px;
+        }
+
+        .fata:hover .poz #textul {
+            display: block;
+        }
+
+        .fata:hover .poz .ochi {
+            animation: ochi 2s linear;
+        }
+
+        .fata:hover .poz .sprancene:first-child {
+            animation: primaspranceana 2s linear;
+        }
+
+        .fata:hover .poz .sprancene:nth-child(2) {
+            animation: adouaspranceana 2s linear;
+        }
+
+        @keyframes primaspranceana {
+            from {
+                transform: rotate(-45deg);
+            }
+
+            to {
+                transform: rotate(45deg);
+                background-color: black;
+            }
+        }
+
+        @keyframes adouaspranceana {
+            from {
+                transform: rotate(45deg);
+            }
+
+            to {
+                transform: rotate(-45deg);
+                background-color: black;
+            }
+        }
+
+        @keyframes ochi {
+            from {
+                background-color: black;
+                box-shadow: 0px 0px 7px 2px black inset;
+            }
+
+            to {
+                background-color: red;
+                box-shadow: 0px 0px 7px 2px black inset;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="fata">
+        <div class="poz">
+            <div class="sprancene"></div>
+            <div class="sprancene"></div>
+        </div>
+        <div class="poz">
+            <div class="ochi"></div>
+            <div class="ochi"></div>
+        </div>
+        <div class="poz">
+            <p id="textul">Lasa-ma in pace!</p>
+        </div>
+    </div>
+</body>
+
+</html>
