@@ -1,0 +1,3 @@
+D:/Facultate/GitHub/Facultate/Structuri de date/lab2/p3/cmake-build-debug/CMakeFiles/p3.dir
+D:/Facultate/GitHub/Facultate/Structuri de date/lab2/p3/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Facultate/GitHub/Facultate/Structuri de date/lab2/p3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

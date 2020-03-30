@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.cpp
+graf.h
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h
+
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h
+iostream
+-
+nod.h
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h
+lista.h
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h
+
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.cpp
+lista.h
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h
+
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h
+climits
+-
+nod.h
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h
+
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/main.cpp
+iostream
+-
+fstream
+-
+assert.h
+-
+graf.h
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h
+
+D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h
+

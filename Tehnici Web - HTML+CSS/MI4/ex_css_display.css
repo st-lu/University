@@ -1,0 +1,26 @@
+/* prima cerinta*/
+div {
+    display: inline;
+}
+
+/* a doua cerinta - width si height nu au efect pt ca e inline */
+span {
+    background-color: red;
+    width: 70px;
+    height: 50px;
+}
+
+/* a 3a cerinta - spanul vine pe rand nou si ce e dupa el vine pe rand nou + width si height au efect*/
+#a span {
+    display: block;
+}
+
+/* a4a cerinta - spanul are width si height si e pe aceeasi linie ca restul paragrafului. Spatierea sub paragraf este borderul paragrafului*/
+#b span {
+    display: inline-block;
+}
+
+/* a 5a cerinta*/
+#c span {
+    display: none;
+}
