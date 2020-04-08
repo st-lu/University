@@ -1,3 +1,0 @@
-D:/Facultate/GitHub/Facultate/Structuri de date/lab2/p4disjoint/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/Facultate/GitHub/Facultate/Structuri de date/lab2/p4disjoint/cmake-build-debug/CMakeFiles/p4disjoint.dir
-D:/Facultate/GitHub/Facultate/Structuri de date/lab2/p4disjoint/cmake-build-debug/CMakeFiles/edit_cache.dir
