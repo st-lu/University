@@ -1,32 +1,30 @@
 #include <fstream>
 using  namespace std;
-ifstream fin ("bitstring.in");
-ofstream fout ("bitstring.out");
-int n, len;
-string x;
+ifstream fin ("bstpath.in");
+ofstream fout ("bstpath.out");
+int n, x, nr, len;
+struct BST{
+    int info;
+    BST *left;
+    BST *right;
+} *bst;
 
-struct BIT{
-    string info;
-    BIT *left;
-    BIT *right;
-} *bit;
-
-void insert(string x){
+void insert(int x){
     if(len == 0) {
-        bit = new BIT;
-        bit->info = x;
-        bit->left = bit->right = nullptr;
+        bst = new BST;
+        bst->info = x;
+        bst->left = bst->right = nullptr;
         return;
     }
 
-    BIT *p = bit;
+    BST *p = bst;
     while(p != nullptr) {
         if(x < p->info){
             if(p->left != nullptr){
                 p = p->left;
             }
             else{
-                BIT *q = new BIT;
+                BST *q = new BST;
                 p->left = q;
                 q->info = x;
                 q->left = q->right = nullptr;
@@ -38,7 +36,7 @@ void insert(string x){
                 p = p->right;
             }
             else{
-                BIT *q = new BIT;
+                BST *q = new BST;
                 p->right = q;
                 q->info = x;
                 q->left = q->right = nullptr;
@@ -49,27 +47,32 @@ void insert(string x){
 
 }
 
-void inorder(BIT *p){
-    if(!len) {
-        fout<<"empty";
-        return;
-    }
+void path(BST *p, int a, int b){
     if(p != nullptr) {
-        inorder(p->left);
-        fout << p->info << " ";
-        inorder(p->right);
+        if(p->info > a)
+            path(p->left, a, b);
+        if(p->info <= b && p->info >= a)
+            fout << p->info << " ";
+        if(p->info < b)
+            path(p->right, a, b);
     }
 }
 
 
 int main() {
-    fin>>n;
+    fin >> n;
     for (int i = 1; i <= n ; ++i) {
         fin >> x;
         insert(x);
         len++;
     }
 
-    inorder(bit);
+    fin >> nr;
+    for (int t = 0; t < nr; ++t) {
+        int a, b;
+        fin >> a >> b;
+        path(bst, a, b);
+        fout << "\n";
+    }
 
 }

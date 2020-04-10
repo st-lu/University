@@ -1,31 +1,32 @@
 #include <fstream>
 using  namespace std;
-ifstream fin ("bitpath.in");
-ofstream fout ("bitpath.out");
-int n, x, nr, len;
-string op;
-struct BIT{
-    int info;
-    BIT *left;
-    BIT *right;
-} *bit;
+ifstream fin ("bststring.in");
+ofstream fout ("bststring.out");
+int n, len;
+string x;
 
-void insert(int x){
+struct BST{
+    string info;
+    BST *left;
+    BST *right;
+} *bst;
+
+void insert(string x){
     if(len == 0) {
-        bit = new BIT;
-        bit->info = x;
-        bit->left = bit->right = nullptr;
+        bst = new BST;
+        bst->info = x;
+        bst->left = bst->right = nullptr;
         return;
     }
 
-    BIT *p = bit;
+    BST *p = bst;
     while(p != nullptr) {
         if(x < p->info){
             if(p->left != nullptr){
                 p = p->left;
             }
             else{
-                BIT *q = new BIT;
+                BST *q = new BST;
                 p->left = q;
                 q->info = x;
                 q->left = q->right = nullptr;
@@ -37,7 +38,7 @@ void insert(int x){
                 p = p->right;
             }
             else{
-                BIT *q = new BIT;
+                BST *q = new BST;
                 p->right = q;
                 q->info = x;
                 q->left = q->right = nullptr;
@@ -48,32 +49,27 @@ void insert(int x){
 
 }
 
-void path(BIT *p, int a, int b){
+void inorder(BST *p){
+    if(!len) {
+        fout<<"empty";
+        return;
+    }
     if(p != nullptr) {
-        if(p->info > a)
-            path(p->left, a, b);
-        if(p->info <= b && p->info >= a)
-            fout << p->info << " ";
-        if(p->info < b)
-            path(p->right, a, b);
+        inorder(p->left);
+        fout << p->info << " ";
+        inorder(p->right);
     }
 }
 
 
 int main() {
-    fin >> n;
+    fin>>n;
     for (int i = 1; i <= n ; ++i) {
         fin >> x;
         insert(x);
         len++;
     }
 
-    fin >> nr;
-    for (int t = 0; t < nr; ++t) {
-        int a, b;
-        fin >> a >> b;
-        path(bit, a, b);
-        fout << "\n";
-    }
+    inorder(bst);
 
 }

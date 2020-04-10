@@ -1,31 +1,31 @@
 #include <fstream>
 using  namespace std;
-ifstream fin ("bit.in");
-ofstream fout ("bit.out");
+ifstream fin ("bst.in");
+ofstream fout ("bst.out");
 int n, x, nr, len;
 string op;
-struct BIT{
+struct BST{
     int info;
-    BIT *left;
-    BIT *right;
-} *bit;
+    BST *left;
+    BST *right;
+} *bst;
 
 void insert(int x){
     if(len == 0) {
-        bit = new BIT;
-        bit->info = x;
-        bit->left = bit->right = nullptr;
+        bst = new BST;
+        bst->info = x;
+        bst->left = bst->right = nullptr;
         return;
     }
 
-    BIT *p = bit;
+    BST *p = bst;
     while(p != nullptr) {
         if(x < p->info){
             if(p->left != nullptr){
                 p = p->left;
             }
             else{
-                BIT *q = new BIT;
+                BST *q = new BST;
                 p->left = q;
                 q->info = x;
                 q->left = q->right = nullptr;
@@ -37,7 +37,7 @@ void insert(int x){
                 p = p->right;
             }
             else{
-                BIT *q = new BIT;
+                BST *q = new BST;
                 p->right = q;
                 q->info = x;
                 q->left = q->right = nullptr;
@@ -48,8 +48,8 @@ void insert(int x){
 
 }
 
-BIT* find(int x){
-    BIT *p = bit;
+BST* find(int x){
+    BST *p = bst;
     while(p != nullptr){
         if(x == p->info)
             return p;
@@ -63,7 +63,7 @@ BIT* find(int x){
     return nullptr;
 }
 
-void inorder(BIT *p){
+void inorder(BST *p){
     if(!len) {
         fout<<"empty";
         return;
@@ -75,7 +75,7 @@ void inorder(BIT *p){
     }
 }
 
-void preorder(BIT *p){
+void preorder(BST *p){
     if(!len) {
         fout<<"empty";
         return;
@@ -88,19 +88,19 @@ void preorder(BIT *p){
 }
 
 void erase(int x){
-    BIT *p = find(x);
+    BST *p = find(x);
     if(p == nullptr)
         return;
     //cazul 1 -> nodul are ambii fii
     if(p->left != nullptr && p->right != nullptr){
-        BIT *q = p->left; bool okr = false; BIT *prevq = p; // in q am nodul cel mai mare mai mic decat p
+        BST *q = p->left; bool okr = false; BST *prevq = p; // in q am nodul cel mai mare mai mic decat p
         while(q->right != nullptr) {
             okr = true;
             prevq = q;
             q = q->right;
         }
 
-        BIT *r = p->right; bool okl = false; BIT *prevr = p; // in r am nodul cel mai mic mai mare decat p
+        BST *r = p->right; bool okl = false; BST *prevr = p; // in r am nodul cel mai mic mai mare decat p
         while (r->left != nullptr) {
             prevr = r;
             r = r->left;
@@ -136,7 +136,7 @@ void erase(int x){
 
     //cazul 2 -> nodul are doar un fiu
     if(p->left != nullptr || p->right != nullptr){
-        BIT *q;
+        BST *q;
         if(p->left)
             q = p->left;
         else
@@ -150,8 +150,8 @@ void erase(int x){
     }
 
     //cazul 3 -> nodul nu are niciun fiu
-    p = bit;
-    BIT *prev = p;
+    p = bst;
+    BST *prev = p;
     bool l = false;
     while(p != nullptr){
         if(x == p->info)
@@ -184,9 +184,9 @@ int main() {
         len++;
     }
 
-    inorder(bit);
+    inorder(bst);
     fout<<"\n";
-    preorder(bit);
+    preorder(bst);
 
     fin>>nr;
     for (int t = 0; t < nr; ++t) {
@@ -204,7 +204,7 @@ int main() {
             erase(x);
             len--;
             fout << "\n";
-            preorder(bit);
+            preorder(bst);
         }
     }
 
