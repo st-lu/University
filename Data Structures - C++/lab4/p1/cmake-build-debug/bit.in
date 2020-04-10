@@ -1,0 +1,15 @@
+9
+6 4 9 2 1 5 3 7 8
+12
+find 1
+find 9
+find 10
+erase 6
+erase 1
+erase 4
+erase 5
+erase 9
+erase 3
+erase 7
+erase 2
+erase 8
