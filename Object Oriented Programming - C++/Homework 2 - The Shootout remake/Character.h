@@ -32,9 +32,8 @@ public:
     virtual bool isDead();
     pair<int, int> getPosition();
     char getType();
-    void changePosition(Map&, pair<int, int>);
-    pair<int, int> findTarget(Map);
+    void changePosition(Map &, pair<int, int>);
+    pair<int, int> findTarget(Map&);
 };
-
 
 #endif //HOMEWORK_2___THE_SHOOTOUT_REMAKE_CHARACTER_H

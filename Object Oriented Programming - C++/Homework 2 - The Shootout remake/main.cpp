@@ -26,11 +26,15 @@ int main() {
     }
 
     Game G(h, w);
-    char cont = 'y';
-    int round = 0;
+    char cont;
+    int round = 1;
+    G.showMap();
+    cout<< "Do you wish to go on?\nYes - Press Y\n No - Press N\n";
+    //fin >> cont;
+    cin >> cont;
     while(cont == 'y'){
         cout << "\nKey: S - sniper; Y - spy; P - Soldier; G - Grenadier\n";
-        cout << "Phase " << round;
+        cout << "Phase " << round << "\n";
         G.run();
         cout<< "Do you wish to go on?\nYes - Press Y\n No - Press N\n";
         //fin >> cont;

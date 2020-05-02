@@ -40,15 +40,17 @@ bool Character::isDead() {
     return Health < 0;
 }
 
-pair<int, int> Character::findTarget(Map Battlefield){
-    for (int i = 0; i < Range/2; ++i) {
-        for (int j = 0; j < Range/2; ++j) {
-            if(i == 0 && j == 0)
-                continue;
-            if(Position.first + i < Battlefield.getHeight() && Position.first + j < Battlefield.getWidth() && Battlefield[Position.first + i][Position.second + j] != ' ')
-                return pair<int, int>(Position.first + i, Position.second + j);
-            if(Position.first - i > 0 && Position.first - j > 0 && Battlefield[Position.first - i][Position.second - j] != ' ')
-                return pair<int, int>(Position.first - i, Position.second - j);
+pair<int, int> Character::findTarget(Map& Battlefield){
+    int *di = new int[8]; di[0] = 0; di[1] = 0; di[2] = 1; di[3] = -1; di[4] = 1; di[5] = 1; di[6] = -1; di[7] = -1;
+    int *dj = new int[8]; dj[0] = 1; dj[1] = -1; dj[2] = 0; dj[3] = 0; dj[4] = 1; dj[5] = -1; dj[6] = 1; di[7] = -1;
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            for (int k = 1; k <= Range; ++k) {
+                if (Position.first + di[i]*k < Battlefield.getHeight() && Position.first + di[i]*k > 0 &&
+                    Position.second + dj[j]*k < Battlefield.getWidth() && Position.second + dj[j]*k > 0 &&
+                    Battlefield[Position.first + di[i]*k][Position.second + dj[j]]*k != ' ')
+                    return pair<int, int>(Position.first + di[i]*k, Position.second + dj[j]*k);
+            }
         }
     }
     return pair<int, int>(-1, -1);

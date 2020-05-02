@@ -20,6 +20,8 @@ public:
     Game(int, int);
     void addCharacters();
     void run();
+    pair<int, int> findTarget(pair<int, int>, int);
+    void showMap();
     ~Game();
 };
 
