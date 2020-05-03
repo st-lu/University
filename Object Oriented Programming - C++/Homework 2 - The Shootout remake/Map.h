@@ -15,10 +15,10 @@ protected:
     char **map;
 public:
     Map(int, int);
-    int getHeight();
-    int getWidth();
+    int getHeight() const;
+    int getWidth() const;
     void addCharacter(char, pair<int, int>);
-    char* operator [](const int) const;
+    char* operator [](int) const;
     friend ostream&operator<<(ostream&, Map&);
     ~Map();
 };

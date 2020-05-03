@@ -8,9 +8,14 @@
 #include "Weapon.h"
 
 class Grenade : public Weapon {
+protected:
+    int KillCount = 0;
 public:
+    //only grenadiers can wield grenades
     Grenade(int damage = 1000);
-    ~Grenade();
+    int getKillCount() const override;
+    int getDamage() override;
+    ~Grenade() override;
 };
 
 

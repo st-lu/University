@@ -6,6 +6,13 @@ ifstream fin ("test.txt");
 
 int main() {
     int h, w;
+    cout << "In a battlefield far, far away\n";
+    cout << "Made out of spaces and a variations of the same 4 letters\n";
+    cout << "4 types of players are fighting to death\nFor whatever reason\n";
+    cout << "But will the winner be announced in time?\n";
+    cout << "Or will the nuclear bomb planted by a mysterious evil force\n";
+    cout << "explode before that happens?\n";
+    cout << "If you wish to see how the game unfolds\n";
     cout << "Insert map size (has to be bigger than 25x25)\n";
     h = w = 0;
     while(h < 25 || w < 25) {
@@ -32,10 +39,10 @@ int main() {
     cout<< "Do you wish to go on?\nYes - Press Y\n No - Press N\n";
     //fin >> cont;
     cin >> cont;
-    while(cont == 'y'){
-        cout << "\nKey: S - sniper; Y - spy; P - Soldier; G - Grenadier\n";
+    while(cont == 'y' || cont == 'Y'){
+        cout << "\nKey: S - sniper; Y - spy; P - Soldier; G - Grenadier\n\n";
         cout << "Phase " << round << "\n";
-        G.run();
+        G.run(round);
         cout<< "Do you wish to go on?\nYes - Press Y\n No - Press N\n";
         //fin >> cont;
         cin >> cont;

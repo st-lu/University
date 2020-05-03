@@ -10,8 +10,13 @@ using namespace std;
 
 class Spy : public Character{
 public:
-    Spy(pair<int, int>, int health = 500, int range = 7, char type = 's');
-    ~Spy();
+    Spy(pair<int, int>, int health = 500, int range = 7, char type = 'y');
+
+    void setHealth(int) override;
+
+    ~Spy() override;
+
+    void name() override;
 };
 
 

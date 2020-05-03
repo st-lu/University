@@ -6,10 +6,12 @@
 
 Weapon::Weapon(int damage) : Damage(damage){}
 
-int Weapon::getDamage() {
-    return Damage;
-}
-
 Weapon::~Weapon() {
     Damage = 0;
 }
+
+void Weapon::setAdrenaline(int) {}
+
+void Weapon::setHealth(int) {}
+
+int Weapon::getKillCount() const { return 0;}

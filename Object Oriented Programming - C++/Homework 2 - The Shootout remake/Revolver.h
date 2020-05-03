@@ -8,8 +8,14 @@
 #include "Weapon.h"
 
 class Revolver : public Weapon {
+protected:
+    int Health;
 public:
     Revolver(int damage = 100);
+    //damage of this weapon changes based on how much health
+    //its wielder has left. only spies can wield revolvers
+    int getDamage() override;
+    void setHealth(int) override;
     ~Revolver();
 };
 

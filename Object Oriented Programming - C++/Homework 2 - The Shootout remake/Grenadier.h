@@ -10,8 +10,11 @@ using namespace std;
 
 class Grenadier : public Character{
 public:
-    Grenadier(pair<int, int>, int health = 300, int range = 4, char type = 's');
-    ~Grenadier();
+    Grenadier(pair<int, int>, int health = 300, int range = 4, char type = 'g');
+    ~Grenadier() override;
+
+    int getDamage() override;
+    void name() override;
 };
 
 #endif //HOMEWORK_2___THE_SHOOTOUT_REMAKE_GRENADIER_H

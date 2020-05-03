@@ -14,12 +14,15 @@
 #include <vector>
 using namespace std;
 class Game {
-public:
+protected:
+    int Timer = rand()%50 + 10;
     Map Battlefield;
     vector<Character*> Characters;
+public:
     Game(int, int);
     void addCharacters();
-    void run();
+    void run(int);
+
     pair<int, int> findTarget(pair<int, int>, int);
     void showMap();
     ~Game();

@@ -21,19 +21,23 @@ protected:
     BulletproofVest *armor;
 public:
 
-    Character(pair<int, int>, int health = 100, int range = 3, char type = '0');
+    Character(pair<int, int>, int health = 0, int range = 0, char type = ' ');
     virtual ~Character() = 0;
 
     int getHealth();
-    void setHealth(int);
+    virtual void setHealth(int);
     int getRange();
-    int getDamage();
+    virtual int getDamage();
     int getProtection();
     virtual bool isDead();
     pair<int, int> getPosition();
-    char getType();
     void changePosition(Map &, pair<int, int>);
-    pair<int, int> findTarget(Map&);
+    virtual void name() = 0;
+
+    void winMessage();
+    void positionMessage(pair<int, int>);
+    void deadMessage();
+    void killerMessage();
 };
 
 #endif //HOMEWORK_2___THE_SHOOTOUT_REMAKE_CHARACTER_H

@@ -1,0 +1,11 @@
+Q: 0 1 2 
+Sigma: ab
+q0: 0
+F: 0 
+delta:
+0 a 2
+0 b 1
+1 a 0
+1 b 2
+2 a 1
+2 b 0

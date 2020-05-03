@@ -9,9 +9,12 @@
 class BulletproofVest {
 protected:
     int Protection;
+    int Durability;
 public:
     BulletproofVest(int protection = 50);
     int getProtection();
+    int getDurability();
+    void decreaseDurability();
     ~BulletproofVest();
 
 };

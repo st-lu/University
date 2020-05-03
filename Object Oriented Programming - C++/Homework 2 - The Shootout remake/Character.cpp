@@ -11,7 +11,7 @@ int Character::getHealth() {
     return Health;
 }
 
-void Character::setHealth(int newHealth){
+void Character::setHealth(const int newHealth){
     Health = newHealth;
 }
 
@@ -19,54 +19,62 @@ int Character::getRange() {
     return Range;
 }
 
-char Character::getType() {
-    return Type;
-}
 
 pair<int, int> Character::getPosition(){
     return Position;
 }
 
 int Character::getDamage() {
+    armor->decreaseDurability();
     return weapon->getDamage();
 }
 
 int Character::getProtection() {
-    return armor->getProtection();
+    if(armor->getDurability())
+        return armor->getProtection();
+
+    return 0;
 }
 
 
 bool Character::isDead() {
-    return Health < 0;
+
+    return Health <= 0;
 }
 
-pair<int, int> Character::findTarget(Map& Battlefield){
-    int *di = new int[8]; di[0] = 0; di[1] = 0; di[2] = 1; di[3] = -1; di[4] = 1; di[5] = 1; di[6] = -1; di[7] = -1;
-    int *dj = new int[8]; dj[0] = 1; dj[1] = -1; dj[2] = 0; dj[3] = 0; dj[4] = 1; dj[5] = -1; dj[6] = 1; di[7] = -1;
-    for (int i = 0; i < 8; ++i) {
-        for (int j = 0; j < 8; ++j) {
-            for (int k = 1; k <= Range; ++k) {
-                if (Position.first + di[i]*k < Battlefield.getHeight() && Position.first + di[i]*k > 0 &&
-                    Position.second + dj[j]*k < Battlefield.getWidth() && Position.second + dj[j]*k > 0 &&
-                    Battlefield[Position.first + di[i]*k][Position.second + dj[j]]*k != ' ')
-                    return pair<int, int>(Position.first + di[i]*k, Position.second + dj[j]*k);
-            }
-        }
-    }
-    return pair<int, int>(-1, -1);
-}
-
-void Character::changePosition(Map &Battlefield, pair<int, int> position) {
+void Character::changePosition(Map &Battlefield, const pair<int, int> position) {
     Battlefield.addCharacter(Type, position);
     Battlefield.addCharacter(' ', Position);
     Position = position;
+}
+
+void Character::positionMessage(const pair<int, int> newPosition) {
+    name();
+    cout << "(" << Position.first + 1 << ", " << Position.second + 1
+         << ")" << " changed position to (" << newPosition.first + 1 << ", " << newPosition.second + 1 << ")\n";
+}
+
+void Character::deadMessage() {
+    name();
+    cout << "(" << Position.first + 1 << ", " << Position.second + 1 << ") is now dead. ";
+}
+
+void Character::killerMessage() {
+    cout << "Killed by ";
+    name();
+    cout<< "(" << Position.first + 1 << ", " << Position.second + 1 << ")\n";
 }
 
 Character::~Character(){
     Health = 0;
     Range = 0;
     Position = pair<int, int>(0, 0);
-    char type = ' ';
+    Type = ' ';
+}
+
+void Character::winMessage() {
+    name();
+    cout << "(" << Position.first << ", " << Position.second << ") won.";
 }
 
 

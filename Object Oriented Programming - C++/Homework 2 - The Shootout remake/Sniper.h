@@ -7,11 +7,14 @@
 
 
 #include "Character.h"
+#include <vector>
 
 class Sniper : public Character {
 public:
     Sniper(pair<int, int>, int health = 500, int range = 7, char type = 's');
-    ~Sniper();
+    ~Sniper() override;
+
+    void name() override;
 };
 
 

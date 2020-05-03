@@ -8,9 +8,15 @@
 #include "Character.h"
 
 class Soldier : public Character {
+protected:
+    int Reinforcement = 5;
 public:
     Soldier(pair<int, int>, int health = 300, int range = 4, char type = 'p');
-    ~Soldier();
+
+    bool isDead() override;
+    ~Soldier() override;
+
+    void name() override;
 };
 
 

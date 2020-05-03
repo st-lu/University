@@ -11,6 +11,8 @@ class SniperRifle : public Weapon {
 public:
     SniperRifle(int damage = 1000);
     ~SniperRifle();
+
+    int getDamage();
 };
 
 

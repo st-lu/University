@@ -11,3 +11,14 @@ int BulletproofVest::getProtection(){
 }
 
 BulletproofVest::~BulletproofVest(){}
+
+void BulletproofVest::decreaseDurability() {
+    if(Durability > 0)
+        Durability --;
+}
+
+int BulletproofVest::getDurability() {
+    return Durability;
+}
+
+
