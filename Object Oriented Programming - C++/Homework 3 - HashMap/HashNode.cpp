@@ -15,7 +15,7 @@ K HashNode<K, V>::getKey() const {
 }
 
 template<typename K, typename V>
-vector<V> HashNode<K, V>::getValue() const {
+vector<V> HashNode<K, V>::getValues() const {
     return value;
 }
 

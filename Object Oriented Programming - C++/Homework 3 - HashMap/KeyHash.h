@@ -14,7 +14,7 @@ public:
 
 template<typename K>
 inline unsigned long KeyHash<K>::operator()(const K &key) const {
-    return reinterpret_cast<unsigned long>(key) % Size; ///dont forget Size here
+    return reinterpret_cast<int>(key) % Size; ///dont forget Size here
 }
 
 

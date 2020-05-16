@@ -17,7 +17,7 @@ public:
     HashNode(const K &key, const V &value);
 
     K getKey() const;
-    vector<V> getValue() const;
+    vector<V> getValues() const;
     void addValue(V value);
     HashNode* getNext() const;
     void setNext(HashNode *next);
