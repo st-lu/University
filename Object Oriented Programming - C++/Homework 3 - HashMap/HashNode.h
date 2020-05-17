@@ -27,7 +27,7 @@ public:
 };
 
 template<typename K, typename V>
-HashNode<K, V>::HashNode(const K &key, const V &value)  : key(key), next(nullptr) {
+inline HashNode<K, V>::HashNode(const K &key, const V &value)  : key(key), next(nullptr) {
     values.push_back(value);
 }
 
@@ -42,7 +42,7 @@ vector<V> HashNode<K, V>::getValues() const {
 }
 
 template<typename K, typename V>
-void HashNode<K, V>::addValue(V value) {
+inline void HashNode<K, V>::addValue(V value) {
     values.push_back(value);
 }
 

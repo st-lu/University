@@ -34,7 +34,7 @@ public:
     //method that returns a vector of known values for a given key
     vector<V> getValuesByKey(const K &key);
     //method that returns the number of keys in the hashmap
-    int getNoOfKeys();
+    int getNoOfKeys() const;
 
     //overloading of the [] operator to return first value know for a given key
     V operator[](const K &key) const;
@@ -45,9 +45,34 @@ public:
     HashMap& operator=(const HashMap&);
 };
 
+template<typename K, typename V, typename F>
+inline HashMap<K, V, F>::HashMap(HashMap &H) {
+    //we allocate a new table for the container hashmap
+    size = H.size;
+    table = new HashNode<K, V> *[size];
+    for (int i = 0; i < size; ++i) {
+        table[i] = nullptr;
+    }
+
+
+    for (int i = 0; i < size; ++i) {
+        if(H.table[i] == nullptr){
+            continue;
+        }
+        // we add each key-value pair in the copied hashmap to the container hashmap
+        auto p = H.table[i];
+        while(p != nullptr){
+            for(auto elem : p->getValues()){
+                add(p->getKey(), elem);
+            }
+            p = p->getNext();
+        }
+    }
+}
+
 
 template<typename K, typename V, typename F>
-HashMap<K, V, F>::HashMap(int s) : size(s), hashFunction(s) {
+inline HashMap<K, V, F>::HashMap(int s) : size(s), hashFunction(s) {
     table = new HashNode<K, V> *[size];
     for (int i = 0; i < size; ++i) {
         table[i] = nullptr; //makes all the buckets null
@@ -55,7 +80,7 @@ HashMap<K, V, F>::HashMap(int s) : size(s), hashFunction(s) {
 }
 
 template<typename K, typename V, typename F>
-HashMap<K, V, F>::~HashMap() {
+inline HashMap<K, V, F>::~HashMap() {
     for (int i = 0; i < size; ++i) {
         HashNode<K, V> *p = table[i];
         while (p != nullptr) {
@@ -100,7 +125,7 @@ bool HashMap<K, V, F>::search(const K &key, const V &value) {
 }
 
 template<typename K, typename V, typename F>
-void HashMap<K, V, F>::add(const K &key, const V &value) {
+inline void HashMap<K, V, F>::add(const K &key, const V &value) {
     int index = hashFunction(key);
     HashNode<K, V> *prev = nullptr;
     HashNode<K, V> *p = table[index];
@@ -177,70 +202,6 @@ void HashMap<K, V, F>::remove(const K &key, const V &value) {
 }
 
 template<typename K, typename V, typename F>
-HashMap<K, V, F>::HashMap(HashMap &H) {
-    //we allocate a new table for the container hashmap
-    size = H.size;
-    table = new HashNode<K, V> *[size];
-    for (int i = 0; i < size; ++i) {
-        table[i] = nullptr;
-    }
-
-
-    for (int i = 0; i < size; ++i) {
-        if(H.table[i] == nullptr){
-            continue;
-        }
-        // we add each key-value pair in the copied hashmap to the container hashmap
-        auto p = H.table[i];
-        while(p != nullptr){
-            for(auto elem : p->getValues()){
-                add(p->getKey(), elem);
-            }
-            p = p->getNext();
-        }
-    }
-}
-
-template<typename K, typename V, typename F>
-HashMap<K, V, F>& HashMap<K, V, F>::operator=(const HashMap &H) {
-    if(this == &H)
-        return *this;
-
-    //first we clear the hashmap
-    for (int i = 0; i < size; ++i) {
-        HashNode<K, V> *p = table[i];
-        while (p != nullptr) {
-            HashNode<K, V> *prev = p;
-            p = p->getNext();
-            delete prev;
-        }
-        table[i] = nullptr;
-    }
-
-    auto auxTable = table;
-    table = new HashNode<K, V> *[H.size]();
-    delete auxTable;
-    size = H.size;
-
-    // then we copy the passed hashmap into the container hashmap
-    // exactly the same as we did in the copy constructor
-    for (int i = 0; i < size; ++i) {
-        if(H.table[i] == nullptr){
-            continue;
-        }
-        auto p = H.table[i];
-        while(p != nullptr){
-            for(auto elem : p->getValues()){
-                add(p->getKey(), elem);
-            }
-            p = p->getNext();
-        }
-    }
-
-    return *this;
-}
-
-template<typename K, typename V, typename F>
 vector<V> HashMap<K, V, F>::getValuesByKey(const K &key) {
     int index = hashFunction(key);
     HashNode<K, V> *p = table[index];
@@ -259,7 +220,7 @@ vector<V> HashMap<K, V, F>::getValuesByKey(const K &key) {
 }
 
 template<typename K, typename V, typename F>
-int HashMap<K, V, F>::getNoOfKeys() {
+int HashMap<K, V, F>::getNoOfKeys() const{
     int keys = 0; //variable that stores the number of keys in the hashmap
     for (int i = 0; i < size; ++i) {
         //we search the table for buckets that are not empty
@@ -316,7 +277,44 @@ ostream &operator<<(ostream &f, HashMap<K, V, F> &H) {
     return f;
 }
 
+template<typename K, typename V, typename F>
+HashMap<K, V, F>& HashMap<K, V, F>::operator=(const HashMap &H) {
+    if(this == &H)
+        return *this;
 
+    //first we clear the hashmap
+    for (int i = 0; i < size; ++i) {
+        HashNode<K, V> *p = table[i];
+        while (p != nullptr) {
+            HashNode<K, V> *prev = p;
+            p = p->getNext();
+            delete prev;
+        }
+        table[i] = nullptr;
+    }
+
+    auto auxTable = table;
+    table = new HashNode<K, V> *[H.size]();
+    delete auxTable;
+    size = H.size;
+
+    // then we copy the passed hashmap into the container hashmap
+    // exactly the same as we did in the copy constructor
+    for (int i = 0; i < size; ++i) {
+        if(H.table[i] == nullptr){
+            continue;
+        }
+        auto p = H.table[i];
+        while(p != nullptr){
+            for(auto elem : p->getValues()){
+                add(p->getKey(), elem);
+            }
+            p = p->getNext();
+        }
+    }
+
+    return *this;
+}
 
 
 #endif //HOMEWORK_3___HASHMAP_HASHMAP_H
