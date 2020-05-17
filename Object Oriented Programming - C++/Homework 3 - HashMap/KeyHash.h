@@ -5,17 +5,17 @@
 #ifndef HOMEWORK_3___HASHMAP_KEYHASH_H
 #define HOMEWORK_3___HASHMAP_KEYHASH_H
 
+#include <iostream>
+#define Size 1111
+using namespace std;
 
 template <typename K>
 class KeyHash {
 public:
-    unsigned long operator()(const K& key) const;
+    int operator()(const K& key) const{
+        return (int)(key) % Size; ///dont forget size here
+    }
 };
-
-template<typename K>
-inline unsigned long KeyHash<K>::operator()(const K &key) const {
-    return reinterpret_cast<int>(key) % Size; ///dont forget Size here
-}
 
 
 #endif //HOMEWORK_3___HASHMAP_KEYHASH_H
