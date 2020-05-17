@@ -47,7 +47,7 @@ public:
 
 
 template<typename K, typename V, typename F>
-HashMap<K, V, F>::HashMap(int s) : size(s) {
+HashMap<K, V, F>::HashMap(int s) : size(s), hashFunction(s) {
     table = new HashNode<K, V> *[size];
     for (int i = 0; i < size; ++i) {
         table[i] = nullptr; //makes all the buckets null
@@ -179,6 +179,7 @@ void HashMap<K, V, F>::remove(const K &key, const V &value) {
 template<typename K, typename V, typename F>
 HashMap<K, V, F>::HashMap(HashMap &H) {
     //we allocate a new table for the container hashmap
+    size = H.size;
     table = new HashNode<K, V> *[size];
     for (int i = 0; i < size; ++i) {
         table[i] = nullptr;
@@ -215,6 +216,11 @@ HashMap<K, V, F>& HashMap<K, V, F>::operator=(const HashMap &H) {
         }
         table[i] = nullptr;
     }
+
+    auto auxTable = table;
+    table = new HashNode<K, V> *[H.size]();
+    delete auxTable;
+    size = H.size;
 
     // then we copy the passed hashmap into the container hashmap
     // exactly the same as we did in the copy constructor

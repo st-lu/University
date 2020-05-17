@@ -53,7 +53,7 @@ HashNode<K, V>* HashNode<K, V>::getNext() const {
 
 template<typename K, typename V>
 void HashNode<K, V>::setNext(HashNode *next) {
-    HashNode::next = next;
+    this->next = next;
 }
 
 template<typename K, typename V>
