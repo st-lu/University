@@ -16,11 +16,12 @@ template <typename K, typename V, typename F = KeyHash<K>>
 class HashMap {
     HashNode<K, V> **table;
     int size;
+    int noOfKeys;
     F hashFunction;
 public:
     // the user can pass a custom size for the hashmap
     // otherwise the hashmap will stick to a default size
-    HashMap(int size = 1111);
+    explicit HashMap(int size = 1111);
     HashMap(HashMap&);
     ~HashMap();
 
@@ -45,9 +46,20 @@ public:
     HashMap& operator=(const HashMap&);
 };
 
+
+template<typename K, typename V, typename F>
+inline HashMap<K, V, F>::HashMap(int s) : size(s), hashFunction(s) {
+    noOfKeys = 0;
+    table = new HashNode<K, V> *[size];
+    for (int i = 0; i < size; ++i) {
+        table[i] = nullptr; //makes all the buckets null
+    }
+}
+
 template<typename K, typename V, typename F>
 inline HashMap<K, V, F>::HashMap(HashMap &H) {
     //we allocate a new table for the container hashmap
+    noOfKeys = 0;
     size = H.size;
     table = new HashNode<K, V> *[size];
     for (int i = 0; i < size; ++i) {
@@ -70,17 +82,10 @@ inline HashMap<K, V, F>::HashMap(HashMap &H) {
     }
 }
 
-
-template<typename K, typename V, typename F>
-inline HashMap<K, V, F>::HashMap(int s) : size(s), hashFunction(s) {
-    table = new HashNode<K, V> *[size];
-    for (int i = 0; i < size; ++i) {
-        table[i] = nullptr; //makes all the buckets null
-    }
-}
-
 template<typename K, typename V, typename F>
 inline HashMap<K, V, F>::~HashMap() {
+    noOfKeys = 0;
+    size = 0;
     for (int i = 0; i < size; ++i) {
         HashNode<K, V> *p = table[i];
         while (p != nullptr) {
@@ -139,6 +144,8 @@ inline void HashMap<K, V, F>::add(const K &key, const V &value) {
 
     if (p == nullptr) {
         p = new HashNode<K, V>(key, value);
+        // if the key is not already in the hashmap, update the number of keys in the table
+        noOfKeys ++;
         if (prev == nullptr) {
             table[index] = p; // if there is no other key at this index, put p first
         } else {
@@ -221,21 +228,7 @@ vector<V> HashMap<K, V, F>::getValuesByKey(const K &key) {
 
 template<typename K, typename V, typename F>
 int HashMap<K, V, F>::getNoOfKeys() const{
-    int keys = 0; //variable that stores the number of keys in the hashmap
-    for (int i = 0; i < size; ++i) {
-        //we search the table for buckets that are not empty
-        if(table[i] != nullptr) {
-            //for the occupied buckets, we go through all the keys they contain
-            auto *p = table[i];
-            while(p != nullptr) {
-                //once we find a key, we update 'keys'
-                keys++;
-                p = p->getNext();
-            }
-        }
-    }
-
-    return keys;
+    return noOfKeys;
 }
 
 template<typename K, typename V, typename F>
@@ -297,6 +290,7 @@ HashMap<K, V, F>& HashMap<K, V, F>::operator=(const HashMap &H) {
     table = new HashNode<K, V> *[H.size]();
     delete auxTable;
     size = H.size;
+    noOfKeys = 0;
 
     // then we copy the passed hashmap into the container hashmap
     // exactly the same as we did in the copy constructor
