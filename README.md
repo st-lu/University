@@ -1,5 +1,5 @@
 # Facultate
-A repository containing (most of) my university projects and laboratory work
+A repository containing (most of) my university projects and laboratory work.
 
 Courses covered:
 * Operating Systems(C)
@@ -9,5 +9,3 @@ Courses covered:
 * Web Development (HTML/CSS/JavaScript/Node.js)
 * Automata Theory (C++)
 * Assembly (MIPS)
-
-Languages used: C/C++, Python, Haskell, JavaScript, CSS/HTML, Node.js
