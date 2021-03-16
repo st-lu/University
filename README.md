@@ -1,10 +1,13 @@
 # Facultate
-a repository containing (most of) my university projects and laboratory work
+A repository containing (most of) my university projects and laboratory work
 
-Programming languages used in this repo:
-- Python
-- C++
-- MIPS(Assembly)
-- HTML
-- CSS
+Courses covered:
+* Operating Systems(C)
+* Algorithms(Python)
+* Data Structures(C++)
+* Object Oriented Programming(C++/soon to add Java)
+* Web Development (HTML/CSS/JavaScript/Node.js)
+* Automata Theory (C++)
+* Assembly (MIPS)
 
+Languages used: C/C++, Python, Haskell, JavaScript, CSS/HTML, Node.js
