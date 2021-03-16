@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug"/>
+				<Option working_dir="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="tema1">
-				<Option output="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/tema1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug"/>
+				<Option output="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/tema1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -32,15 +32,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 tema1"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 tema1"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="tema1/fast">
-				<Option output="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/tema1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug"/>
+				<Option output="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/tema1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,64 +53,55 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 tema1/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 tema1/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug"/>
+				<Option working_dir="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug"/>
+				<Option working_dir="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.cpp">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/graf.cpp">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/graf.h">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graffff.h">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/lista.cpp">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.cpp">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/lista.h">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/main.cpp">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/listaaaaa.h">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.cpp">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/main.cpp">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.h">
 			<Option target="tema1"/>
 		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.cpp">
-			<Option target="tema1"/>
-		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h">
-			<Option target="tema1"/>
-		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nodddd.h">
-			<Option target="tema1"/>
-		</Unit>
-		<Unit filename="D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/CMakeLists.txt">
+		<Unit filename="L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

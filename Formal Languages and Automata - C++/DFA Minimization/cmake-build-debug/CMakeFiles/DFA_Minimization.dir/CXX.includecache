@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+L:/GitHub/University/Formal Languages and Automata - C++/DFA Minimization/main.cpp
+iostream
+-
+map
+-
+string
+-
+set
+-
+fstream
+-
+set
+-
+algorithm
+-
+

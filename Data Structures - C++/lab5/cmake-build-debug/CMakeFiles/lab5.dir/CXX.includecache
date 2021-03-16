@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+L:/GitHub/University/Data Structures - C++/lab5/directedGraph.cpp
+directedGraph.h
+L:/GitHub/University/Data Structures - C++/lab5/directedGraph.h
+
+L:/GitHub/University/Data Structures - C++/lab5/directedGraph.h
+iostream
+-
+vector
+-
+

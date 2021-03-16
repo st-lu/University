@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+L:/GitHub/University/Formal Languages and Automata - C++/DFA to Regex/main.cpp
+iostream
+-
+map
+-
+string
+-
+set
+-
+fstream
+-
+

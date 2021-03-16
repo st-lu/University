@@ -1,0 +1,3 @@
+L:/GitHub/University/Formal Languages and Automata - C++/DFA to Regex/cmake-build-debug/CMakeFiles/DFA_to_Regex.dir
+L:/GitHub/University/Formal Languages and Automata - C++/DFA to Regex/cmake-build-debug/CMakeFiles/edit_cache.dir
+L:/GitHub/University/Formal Languages and Automata - C++/DFA to Regex/cmake-build-debug/CMakeFiles/rebuild_cache.dir

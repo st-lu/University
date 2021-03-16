@@ -1,0 +1,4 @@
+"C:\Users\luana\AppData\Local\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "L:\GitHub\University\Data Structures - C++\lab5"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: L:/GitHub/University/Data Structures - C++/lab5/cmake-build-debug

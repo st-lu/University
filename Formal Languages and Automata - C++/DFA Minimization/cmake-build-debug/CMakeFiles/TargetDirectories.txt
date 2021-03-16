@@ -1,0 +1,3 @@
+L:/GitHub/University/Formal Languages and Automata - C++/DFA Minimization/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+L:/GitHub/University/Formal Languages and Automata - C++/DFA Minimization/cmake-build-debug/CMakeFiles/DFA_Minimization.dir
+L:/GitHub/University/Formal Languages and Automata - C++/DFA Minimization/cmake-build-debug/CMakeFiles/edit_cache.dir

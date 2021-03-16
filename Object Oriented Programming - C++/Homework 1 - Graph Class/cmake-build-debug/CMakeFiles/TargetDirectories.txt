@@ -1,3 +1,3 @@
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/CMakeFiles/tema1.dir
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/CMakeFiles/tema1.dir
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/CMakeFiles/edit_cache.dir
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/CMakeFiles/rebuild_cache.dir

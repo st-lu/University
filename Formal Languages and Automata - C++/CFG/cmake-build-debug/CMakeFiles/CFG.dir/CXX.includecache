@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+L:/GitHub/University/Formal Languages and Automata - C++/CFG/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+map
+-
+queue
+-
+

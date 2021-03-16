@@ -6,29 +6,29 @@
 
 #IncludeRegexTransform: 
 
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.cpp
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/graf.cpp
 graf.h
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/graf.h
 
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/graf.h
 iostream
 -
 nod.h
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.h
 lista.h
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/lista.h
 
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.cpp
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/lista.cpp
 lista.h
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/lista.h
 
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/lista.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/lista.h
 climits
 -
 nod.h
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.h
 
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/main.cpp
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/main.cpp
 iostream
 -
 fstream
@@ -36,7 +36,11 @@ fstream
 assert.h
 -
 graf.h
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/graf.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/graf.h
 
-D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/nod.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.cpp
+nod.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.h
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/nod.h
 

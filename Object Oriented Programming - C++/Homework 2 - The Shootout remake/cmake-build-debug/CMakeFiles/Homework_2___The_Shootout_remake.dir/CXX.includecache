@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/BulletproofVest.h
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Character.h
+iostream
+-
+Map.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Map.h
+Weapon.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Weapon.h
+BulletproofVest.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/BulletproofVest.h
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/GameEngine.cpp
+iostream
+-
+GameEngine.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/GameEngine.h
+vector
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/GameEngine.h
+Map.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Map.h
+Character.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Character.h
+Sniper.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Sniper.h
+Spy.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Spy.h
+Soldier.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Soldier.h
+Grenadier.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Grenadier.h
+vector
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Grenadier.h
+Character.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Character.h
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Map.h
+iostream
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Sniper.h
+Character.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Character.h
+vector
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Soldier.h
+Character.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Character.h
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Spy.h
+Character.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Character.h
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 2 - The Shootout remake/Weapon.h
+iostream
+-
+

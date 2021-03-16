@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/HashMap.h
+KeyHash.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/KeyHash.h
+HashNode.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/HashNode.h
+iostream
+-
+vector
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/HashNode.h
+iostream
+-
+vector
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/KeyHash.h
+iostream
+-
+
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/main.cpp
+iostream
+-
+cassert
+-
+HashMap.h
+L:/GitHub/University/Object Oriented Programming - C++/Homework 3 - HashMap/HashMap.h
+

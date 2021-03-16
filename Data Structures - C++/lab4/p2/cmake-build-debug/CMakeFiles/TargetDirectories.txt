@@ -1,0 +1,3 @@
+L:/GitHub/University/Data Structures - C++/lab4/p2/cmake-build-debug/CMakeFiles/p2.dir
+L:/GitHub/University/Data Structures - C++/lab4/p2/cmake-build-debug/CMakeFiles/edit_cache.dir
+L:/GitHub/University/Data Structures - C++/lab4/p2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

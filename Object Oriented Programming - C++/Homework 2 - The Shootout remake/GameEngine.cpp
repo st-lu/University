@@ -70,8 +70,8 @@ void Game::run(const int round){
         return;
     }
 
-    int *di = new int[8]; di[0] = 0; di[1] = 0; di[2] = 1; di[3] = -1; di[4] = 1; di[5] = 1; di[6] = -1; di[7] = -1;
-    int *dj = new int[8]; dj[0] = 1; dj[1] = -1; dj[2] = 0; dj[3] = 0; dj[4] = 1; dj[5] = -1; dj[6] = 1; di[7] = -1;
+    int *di = new int[8]; di[0] = 0; di[1] = 1; di[2] = 0; di[3] = -1; di[4] = 1; di[5] = 1; di[6] = -1; di[7] = -1;
+    int *dj = new int[8]; dj[0] = 1; dj[1] = 0; dj[2] = -1; dj[3] = 0; dj[4] = 1; dj[5] = -1; dj[6] = 1; di[7] = -1;
 
     //if the game is not over, we take each character(player) from the list
     //and set a target for it, or we change it's position

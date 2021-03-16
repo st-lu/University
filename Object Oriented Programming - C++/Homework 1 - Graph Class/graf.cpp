@@ -161,6 +161,7 @@ int Graf::componente_conexe(){
 
 /// Operatori
 
+
 Graf& Graf::operator=(const Graf& g) {
     if(this == &g){
         return *this;
@@ -180,7 +181,7 @@ Graf& Graf::operator=(const Graf& g) {
     }
     return *this;
 }
-
+//a[3]
 int* Graf::operator[](const int nod) const{
     int *sol = new int[adiacenta[nod].length()+1];
     sol[0] = adiacenta[nod].length();
@@ -191,9 +192,9 @@ int* Graf::operator[](const int nod) const{
     delete[] aux;
     return sol;
 }
-
-bool Graf::operator>(const Graf& g) const {
-    if(this->nr_noduri > g.nr_noduri || (this->nr_muchii > g.nr_muchii && this->nr_noduri == g.nr_noduri))
+//a&&(b)
+bool Graf::operator&&(const Graf& g) const {
+    if(this->nr_noduri == g.nr_noduri || (this->nr_muchii > g.nr_muchii && this->nr_noduri == g.nr_noduri))
         return true;
     return false;
 }
@@ -203,7 +204,12 @@ bool Graf::operator<(const Graf& g) const{
         return true;
     return false;
 }
+// cin >> a;
 
+//citire.in
+//6
+//7
+//1 2
 istream& operator>>(istream& in, Graf& g){
     int noduri, muchii;
     in >> noduri;
@@ -220,7 +226,8 @@ istream& operator>>(istream& in, Graf& g){
     }
     return in;
 }
-
+//f << graf
+//printf(graf)
 ostream& operator<<(ostream& out, Graf& g){
     //formatul out va fi:
     //nodk: nodvecink1, nodvecink2,... endl

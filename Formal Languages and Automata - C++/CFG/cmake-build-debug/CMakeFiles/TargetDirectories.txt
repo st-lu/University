@@ -1,0 +1,3 @@
+L:/GitHub/University/Formal Languages and Automata - C++/CFG/cmake-build-debug/CMakeFiles/CFG.dir
+L:/GitHub/University/Formal Languages and Automata - C++/CFG/cmake-build-debug/CMakeFiles/edit_cache.dir
+L:/GitHub/University/Formal Languages and Automata - C++/CFG/cmake-build-debug/CMakeFiles/rebuild_cache.dir

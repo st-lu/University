@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\Facultate\GitHub\Facultate\Programare Orientata pe Obiecte - C++\tema1"
+"C:\Users\luana\AppData\Local\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "L:\GitHub\University\Object Oriented Programming - C++\Homework 1 - Graph Class"
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug
+-- Build files have been written to: L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug

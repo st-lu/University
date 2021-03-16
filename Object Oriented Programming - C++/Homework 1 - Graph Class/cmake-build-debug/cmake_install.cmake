@@ -1,4 +1,4 @@
-# Install script for directory: D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1
+# Install script for directory: L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Facultate/GitHub/Facultate/Programare Orientata pe Obiecte - C++/tema1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "L:/GitHub/University/Object Oriented Programming - C++/Homework 1 - Graph Class/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

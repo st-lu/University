@@ -5,8 +5,8 @@
 #include "nod.h"
 #include "lista.h"
 using namespace std;
-
 class Graf{
+private:
     int nr_muchii;
     int nr_noduri;
     Lista *adiacenta; // lista cu listele de adiacenta
@@ -48,8 +48,9 @@ public:
     Graf(Graf&);
     ~Graf();
 
-
     //metode
+    //Graf a;
+    // nr_noduri = a.get_noduri();
     int get_noduri() const; //metoda prin care obtine nr de noduri
     int get_muchii() const; //metoda prin care obtinem nr de muchii
     void add(int, int); //metoda prin care adaugam o muchie la graf
@@ -68,12 +69,14 @@ public:
     friend istream&operator>>(istream&, Graf&);
     friend ostream&operator<<(ostream&, Graf&);
 };
-
-inline Graf::Graf(){
+// Graf a;
+Graf::Graf(){
     nr_noduri = nr_muchii = 0;
     adiacenta = nullptr;
 }
-
+//Graf a;
+// a = ...
+// Graf b(a);
 inline Graf::Graf(Graf &g){
     this->nr_noduri = g.nr_noduri;
     this->nr_muchii = g.nr_muchii;
@@ -87,7 +90,9 @@ inline Graf::Graf(Graf &g){
         delete[] aux;
     }
 }
-
+// int v[1000] - lista tati
+// int 14
+// Graf a(14, v);
 inline Graf::Graf(int n, int v[]){
     nr_muchii = 0;
     nr_noduri = 0;

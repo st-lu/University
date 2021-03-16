@@ -91,16 +91,16 @@ void erase(int x){
     BST *p = find(x);
     if(p == nullptr)
         return;
-    //cazul 1 -> nodul are ambii fii
+
     if(p->left != nullptr && p->right != nullptr){
-        BST *q = p->left; bool okr = false; BST *prevq = p; // in q am nodul cel mai mare mai mic decat p
+        BST *q = p->left; bool okr = false; BST *prevq = p;
         while(q->right != nullptr) {
             okr = true;
             prevq = q;
             q = q->right;
         }
 
-        BST *r = p->right; bool okl = false; BST *prevr = p; // in r am nodul cel mai mic mai mare decat p
+        BST *r = p->right; bool okl = false; BST *prevr = p;
         while (r->left != nullptr) {
             prevr = r;
             r = r->left;
@@ -134,7 +134,6 @@ void erase(int x){
         return;
     }
 
-    //cazul 2 -> nodul are doar un fiu
     if(p->left != nullptr || p->right != nullptr){
         BST *q;
         if(p->left)
@@ -149,7 +148,6 @@ void erase(int x){
         return;
     }
 
-    //cazul 3 -> nodul nu are niciun fiu
     p = bst;
     BST *prev = p;
     bool l = false;
