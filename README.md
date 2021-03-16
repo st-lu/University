@@ -1,5 +1,4 @@
-# Facultate
-A repository containing (most of) my university projects and laboratory work.
+# A repository containing (most of) my university projects and laboratory work.
 
 Courses covered:
 * Operating Systems(C)
